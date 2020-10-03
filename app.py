@@ -35,9 +35,9 @@ path =r'C:\Users\sangavi\Desktop\DraupZinnov\Dell_Taxonomy\app\Datasets'
 
 # link to the datasets hosted on github (Sangavi-123)
 
-url_eng ='https://github.com/Sangavi-123/Dash_App_Cluster/raw/main/Dell_Eng_Talent_byLocations.xlsx'
-url_pdt = 'https://github.com/Sangavi-123/Dash_App_Cluster/raw/main/Dell_Pdt_Ser_Talent_byLocations.xlsx'
-url_prof = 'https://github.com/Sangavi-123/Dash_App_Cluster/raw/main/Dell_Prof_Ser_Talent_byLocations.xlsx'
+url_eng ='https://github.com/Sangavi-123/flying-dog-beers/raw/master/Dell_Eng_Talent_byLocations.xlsx'
+url_pdt = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Pdt_Ser_Talent_byLocations.xlsx'
+url_prof = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Prof_Ser_Talent_byLocations.xlsx'
 
 eng = pd.read_excel(url_eng)
 pdt = pd.read_excel(url_pdt)
