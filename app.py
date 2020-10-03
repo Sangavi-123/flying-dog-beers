@@ -159,7 +159,7 @@ def preprocessing(scaled,unscaled,column):
 
 # DASH APP
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-#     server = app.server
+server = app.server
 app.layout = html.Div(children =
                         [
                              html.Div(
