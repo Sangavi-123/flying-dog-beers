@@ -22,15 +22,6 @@ from plotly.tools import mpl_to_plotly
 from sklearn.preprocessing import StandardScaler
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import os
-
-# working directory
-os.chdir('C:\\Users\\sangavi\\Desktop\\DraupZinnov\\Dell_Taxonomy\\app\\Datasets')
-path =r'C:\Users\sangavi\Desktop\DraupZinnov\Dell_Taxonomy\app\Datasets'
-
-
-# ### Reading the datasets
-
 
 
 # link to the datasets hosted on github (Sangavi-123)
@@ -275,6 +266,4 @@ def changedata6(value):
 
 if __name__ == '__main__':
     app.run_server()
-
-
 
