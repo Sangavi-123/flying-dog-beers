@@ -1,32 +1,22 @@
-
-import numpy as np
-import pandas as pd
-import glob
-import sys
 import dash
-import warnings
-warnings.filterwarnings('ignore')
-import plotly
-from sklearn.cluster import KMeans
-from yellowbrick.cluster import KElbowVisualizer
-import plotly.graph_objects as go
-#from jupyter_dash import JupyterDash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input,Output
-import matplotlib.pyplot as plt
-import plotly.express as px
-import dash_bootstrap_components as dbc
-import plotly.tools as tls
-from plotly.tools import mpl_to_plotly
-from sklearn.preprocessing import StandardScaler
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
+import plotly.graph_objs as go
 
+########### Define your variables
+beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
+ibu_values=[35, 60, 85, 75]
+abv_values=[5.4, 7.1, 9.2, 4.3]
+color1='lightblue'
+color2='darkgreen'
+mytitle='Sample Comparison'
+tabtitle='sample!'
+myheading='Sample check'
+label1='IBU'
+label2='ABV'
+githublink='https://github.com/austinlasseter/flying-dog-beers'
+sourceurl='https://www.flyingdog.com/beers/'
 
-# link to the datasets hosted on github (Sangavi-123)
-
-data= pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv")
 
 fig = go.Figure(data=go.Scatter(x=data['Postal'],
                                 y=data['Population'],
@@ -36,15 +26,25 @@ fig = go.Figure(data=go.Scatter(x=data['Postal'],
 
 fig.update_layout(title='Population of USA States')
 
-# DASH APP
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+########### Initiate the app
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-app.layout = html.Div(children =
-                        [
-                             dcc.Graph( id = 'g1', figure = fig),
-                        ]
-                     )
-                         
+app.title=tabtitle
+
+########### Set up the layout
+app.layout = html.Div(children=[
+    html.H1(myheading),
+    dcc.Graph(
+        id='flyingdog',
+        figure=fig
+    ),
+    html.A('Code on Github', href=githublink),
+    html.Br(),
+    html.A('Data Source', href=sourceurl),
+    ]
+)
+
 if __name__ == '__main__':
     app.run_server()
-
