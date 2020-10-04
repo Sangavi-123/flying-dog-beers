@@ -27,12 +27,12 @@ import plotly.graph_objects as go
 # link to the datasets hosted on github (Sangavi-123)
 
 url_eng ='https://github.com/Sangavi-123/flying-dog-beers/raw/master/Dell_Eng_Talent_byLocations.xlsx'
-url_pdt = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Pdt_Ser_Talent_byLocations.xlsx'
-url_prof = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Prof_Ser_Talent_byLocations.xlsx'
+#url_pdt = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Pdt_Ser_Talent_byLocations.xlsx'
+#url_prof = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Prof_Ser_Talent_byLocations.xlsx'
 
 eng = pd.read_excel(url_eng)
-pdt = pd.read_excel(url_pdt)
-profs = pd.read_excel(url_prof)
+#pdt = pd.read_excel(url_pdt)
+#profs = pd.read_excel(url_prof)
 
 df = eng
 
