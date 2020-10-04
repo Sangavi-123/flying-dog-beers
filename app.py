@@ -26,27 +26,22 @@ import plotly.graph_objects as go
 
 # link to the datasets hosted on github (Sangavi-123)
 
-url_eng ='https://github.com/Sangavi-123/flying-dog-beers/raw/master/Dell_Eng_Talent_byLocations.xlsx'
-#url_pdt = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Pdt_Ser_Talent_byLocations.xlsx'
-#url_prof = 'https://github.com/Sangavi-123/flying-dog-beers/raw/main/Dell_Prof_Ser_Talent_byLocations.xlsx'
+data= pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv")
 
-eng = pd.read_excel(url_eng)
-#pdt = pd.read_excel(url_pdt)
-#profs = pd.read_excel(url_prof)
+fig = go.Figure(data=go.Scatter(x=data['Postal'],
+                                y=data['Population'],
+                                mode='markers',
+                                marker_color=data['Population'],
+                                text=data['State'])) # hover text goes here
 
-df = eng
-
-figure = px.scatter(df, x = 'Normalized Value', y = '8 + years', hover_name = 'locations')
-figure.update_traces(marker=dict(size=15))
-
-
+fig.update_layout(title='Population of USA States')
 
 # DASH APP
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 app.layout = html.Div(children =
                         [
-                             dcc.Graph( id = 'g1', figure = figure),
+                             dcc.Graph( id = 'g1', figure = fig),
                         ]
                      )
                          
